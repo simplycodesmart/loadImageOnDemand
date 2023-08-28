@@ -1,0 +1,9 @@
+<mat-card class="mat-elevation-z2 mat-card">
+  <div class="image-container">
+    <img [src]="image" alt="image">
+    <button class="button" (click)="loadImages()" *ngIf="showButton">
+      <span>+</span>
+      <span>{{remaining}}</span>
+    </button>
+  </div>
+</mat-card>
