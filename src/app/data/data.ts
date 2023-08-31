@@ -113,12 +113,5 @@ export const mockData: Data[] = [
     "id": 28,
     "image": "assets/image.jpg"
   },
-  {
-    "id": 29,
-    "image": "assets/image.jpg"
-  },
-  {
-    "id": 30,
-    "image": "assets/image.jpg"
-  }
+
 ]

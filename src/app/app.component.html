@@ -1,12 +1,13 @@
 <div style="display: flex;justify-content: center;flex-direction: column;">
   <div style="display: flex;gap: 1em; justify-content: center; flex-wrap: wrap;" pinScroll>
     <ng-container *ngFor="let datum of data | slice:0:intial;let last = last;let i =index">
-      <app-image-card [image]="datum.image" [showButton]="last && i !==data.length-1"
-        (loadImage)="loadImages($event)"></app-image-card>
+      <app-image-card [image]="datum.image" [showButton]="last && i !==data.length-1"></app-image-card>
     </ng-container>
-  </div>
-  <div #focus>
-    <button style="margin: 20px; width: 300px;" color="accent" mat-raised-button (click)="resetView()"
-      [disabled]="intial === 5">Reset View</button>
+    <ng-container *ngIf="dataTransferService.isLoading$ | async">
+      <ng-container *ngFor="let datum of [1,2,3,4,5] | slice:0:(data.length - intial)">
+        <div style="border-radius: inherit; width: 20vw; height: 40vh; position: relative;" class="loader">
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
 </div>
