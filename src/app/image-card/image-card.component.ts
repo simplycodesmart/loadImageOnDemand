@@ -11,8 +11,7 @@ export class ImageCardComponent {
   @Input() image: string;
   @Input() remaining: string;
   @Input() showButton: boolean;
-  public isDataLoading: boolean = false;
-  constructor(private dataTransferService: DataTransferService) {
+  constructor(public dataTransferService: DataTransferService) {
     this.image = '';
     this.remaining = '';
     this.showButton = false;

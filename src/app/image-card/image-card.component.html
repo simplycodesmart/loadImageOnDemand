@@ -1,7 +1,8 @@
 <mat-card class="mat-elevation-z2 mat-card">
   <div class="image-container">
     <img [src]="image" alt="image">
-    <button class="button" (click)="loadImages()" *ngIf="showButton">
+    <button class="button" (click)="loadImages()" *ngIf="showButton"
+      [disabled]="dataTransferService.isLoading$ | async">
       <span>+</span>
       <span>{{remaining}}</span>
     </button>
